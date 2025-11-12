@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Manages the player's inventory of collectibles
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;

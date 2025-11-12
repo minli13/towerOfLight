@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Manages the terminal that collects energy from the player
 public class TerminalManager : MonoBehaviour
 {
     private bool playerInRange = false;
