@@ -22,9 +22,8 @@ public class ConduitPuzzle : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Only interact if player has Pliers equipped
-        ToolSystem toolSystem = FindObjectOfType<ToolSystem>();
-        if (toolSystem != null && toolSystem.IsEquipped("Pliers"))
+        // Only interact if player has Screwdriver equipped
+        if (ToolRingManager.Instance != null && ToolRingManager.Instance.IsToolEquipped("Screwdriver"))
         {
             if (!puzzleUI.IsPuzzleActive())
             {
@@ -36,7 +35,10 @@ public class ConduitPuzzle : MonoBehaviour
         }
         else
         {
-            Debug.Log("You need to equip the Pliers to interact with the conduit.");
+            Debug.Log("You need to equip the Screwdriver to interact with the conduit.");
+            // current tool equipped
+            Debug.Log($"Current tool: {ToolRingManager.Instance.currentToolName}");
+
         }
     }
 
@@ -44,6 +46,11 @@ public class ConduitPuzzle : MonoBehaviour
     {
         isPowered = true;
         UpdateConduitVisual();
+        // Add 3 cell energy
+        PlayerInventory.instance.AddCollectible();
+        PlayerInventory.instance.AddCollectible();
+        PlayerInventory.instance.AddCollectible();
+        Debug.Log("Conduit powered! Added 3 cells to inventory.");
     }
 
     void UpdateConduitVisual()
