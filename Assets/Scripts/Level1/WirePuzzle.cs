@@ -15,6 +15,15 @@ public class WirePuzzle : MonoBehaviour
     public PuzzleUIManager puzzleUI;
     public ConduitPuzzle conduitPuzzle;
 
+    public Camera puzzleCamera;
+
+    void Start()
+    {
+        if (puzzleCamera == null)
+        {
+            puzzleCamera = Camera.main;
+        }
+    }
 
     void Update()
     {
@@ -27,8 +36,13 @@ public class WirePuzzle : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) 
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            Vector2 mousePos = puzzleCamera.ScreenToWorldPoint(Input.mousePosition);
+            int layerMask = LayerMask.GetMask("WirePuzzle");
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
+            if (hit.collider != null)
+            {
+                Debug.Log("Hit object: " + hit.collider.name + " Tag: " + hit.collider.tag);
+            }
             if (hit.collider != null)
             {
                 // Start a wire
@@ -86,7 +100,7 @@ public class WirePuzzle : MonoBehaviour
         // Update current line position while dragging
         if (currentLine != null)
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Get mouse position in world space
+            Vector3 mousePos = puzzleCamera.ScreenToWorldPoint(Input.mousePosition); // Get mouse position in world space
             mousePos.z = 0; // Set z to 0 for 2D
             currentLine.SetPosition(1, mousePos); // Update end position to mouse
         }

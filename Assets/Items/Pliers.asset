@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6d6e18db7f824d9889bdaddd40c56, type: 3}
   m_Name: Pliers
   m_EditorClassIdentifier: 
-  toolName: Pliers
+  itemName: Pliers
   icon: {fileID: 21300000, guid: 7aed1c7d9bcfa844297764a3227f45af, type: 3}
+  durability: 0
+  power: 0

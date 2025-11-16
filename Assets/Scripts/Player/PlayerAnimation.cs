@@ -2,24 +2,44 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator anim;
     public string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
     public string[] runDirections = { "Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE" };
-    int lastDirection;
+    public int lastDirection;
 
-
+    private Vector2 input;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   /*
+        // GetInput
+        input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
+        // Debug.Log($"{name}: Input = {input}");
+
+        // If no input, play static animation
+        if (input.sqrMagnitude == 0)
+        {
+            // Debug.Log($"{name}: Idle. Using Static direction index {lastDirection}");
+            anim.Play(staticDirections[lastDirection]);
+            return;
+        }
+
+        // Moving: calculate walking direction
+        int directionIndex = DirectionToIndex(input);
+        lastDirection = directionIndex;
+
+        // Debug.Log($"{name}: Moving. Direction index = {directionIndex}, playing {runDirections[directionIndex]}");
+
+        anim.Play(runDirections[directionIndex]); */
         
     }
 

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ToolRingManager : MonoBehaviour
 {
     public static ToolRingManager Instance;
+    public ToolHolderController toolHolder; // Reference to the player's tool holder
     public GameObject toolRingPanel; // Panel containing the tool ring UI
     public List<Image> toolIcons; // UI Images for tool icons
     public Image selectionHighlight; // Highlight for selected tool
@@ -58,9 +59,11 @@ public class ToolRingManager : MonoBehaviour
         isOpen = true;
         toolRingPanel.SetActive(true);
         Time.timeScale = 0f; // pause game time
+        toolHolder.toolRenderer.enabled = false;
         UpdateSelection();
     }
 
+    // Close the tool ring and select the current tool
     void CloseRing()
     {
         isOpen = false;
@@ -69,6 +72,10 @@ public class ToolRingManager : MonoBehaviour
     
         currentToolName = toolIcons[selectedToolIndex].name;
         Debug.Log($"Selected tool index: {toolIcons[selectedToolIndex].name}");
+
+        // Update the tool holder's sprite
+        toolHolder.toolRenderer.sprite = toolIcons[selectedToolIndex].sprite;
+        toolHolder.toolRenderer.enabled = true;
     }
 
     void NextTool()
@@ -83,6 +90,7 @@ public class ToolRingManager : MonoBehaviour
         UpdateSelection();
     }
 
+    // Update the position of the selection highlight
     void UpdateSelection()
     {
         selectionHighlight.transform.position = toolIcons[selectedToolIndex].transform.position;

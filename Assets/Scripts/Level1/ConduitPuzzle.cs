@@ -30,8 +30,8 @@ public class ConduitPuzzle : MonoBehaviour
                 puzzleUI.ShowPuzzle();
             }
             isPowered = !isPowered;
-            
-            Debug.Log($"Conduit is now {(isPowered ? "powered" : "unpowered")}");
+
+            Debug.Log($"Conduit is now {(isPowered ? "powered" : "unpowered")} by {ToolRingManager.Instance.currentToolName}");
         }
         else
         {
