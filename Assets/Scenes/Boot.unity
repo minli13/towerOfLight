@@ -170,6 +170,9 @@ Transform:
   - {fileID: 117474768}
   - {fileID: 1608787313}
   - {fileID: 893014932}
+  - {fileID: 747796379}
+  - {fileID: 1081496246}
+  - {fileID: 1431541945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117474767
@@ -327,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &747796379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -336,15 +339,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747796378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 80.03159}
+  m_LocalScale: {x: 0.021327013, y: 0.021327013, z: 0.021327013}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 771041666}
+  m_Father: {fileID: 97160447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.9068, y: 7.945862}
+  m_AnchoredPosition: {x: -2.0348587, y: 1.7738905}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747796380
@@ -417,9 +420,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680538597}
-  - {fileID: 747796379}
-  - {fileID: 1081496246}
-  - {fileID: 1431541945}
   m_Father: {fileID: 1608787313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -553,7 +553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1081496246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -562,15 +562,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081496245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 80.03159}
+  m_LocalScale: {x: 0.021327013, y: 0.021327013, z: 0.021327013}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 771041666}
+  m_Father: {fileID: 97160447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.22381568, y: 1.6044292}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081496247
@@ -659,6 +659,7 @@ MonoBehaviour:
   toolRenderer: {fileID: 1613442482}
   playerRenderer: {fileID: 7933485760699227343}
   playerAnim: {fileID: 2184102705660382451}
+  selectionHighlight: {fileID: 1680538598}
   upOffset: {x: 0.05, y: 0.2}
   downOffset: {x: 0.2, y: -0.15}
   leftOffset: {x: -0.1, y: -0.15}
@@ -768,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1431541945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -776,16 +777,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431541944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 80.03159}
+  m_LocalScale: {x: 0.021327013, y: 0.021327013, z: 0.021327013}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 771041666}
+  m_Father: {fileID: 97160447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.22381568, y: 1.6044292}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431541946
@@ -1035,13 +1036,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolHolder: {fileID: 1346658420}
   toolRingPanel: {fileID: 771041665}
-  toolIcons:
-  - {fileID: 747796380}
-  - {fileID: 1081496247}
-  - {fileID: 1431541946}
+  toolIcons: []
   selectionHighlight: {fileID: 1680538598}
   openKey: 9
   currentToolName: 
+  hasAnyTools: 0
+  toolIconsParent: {fileID: 771041666}
+  toolIconPrefab: {fileID: 5597082346991582125, guid: bfde1eafb1d8c954f874735ca02e5ee4, type: 3}
 --- !u!114 &1608787315
 MonoBehaviour:
   m_ObjectHideFlags: 0

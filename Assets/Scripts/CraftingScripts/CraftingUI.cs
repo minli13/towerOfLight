@@ -87,9 +87,9 @@ public class CraftingUI : MonoBehaviour
         PopulateRecipeButtons();
         ClearSelectedRecipe();
 
-        // Optional: Pause game or disable player movement
-        // Time.timeScale = 0f;
-        // FindObjectOfType<PlayerMovement>().enabled = false;
+        // Pause game disable player movement
+        Time.timeScale = 0f;
+        GameManager.Instance.LockInput();
     }
 
     public void HideCraftingUI()
@@ -97,9 +97,9 @@ public class CraftingUI : MonoBehaviour
         craftingPanel.SetActive(false);
         currentStation = null;
 
-        // Optional: Resume game or enable player movement
-        // Time.timeScale = 1f;
-        // FindObjectOfType<PlayerMovement>().enabled = true;
+        // Resume game or enable player movement
+        Time.timeScale = 1f;
+        GameManager.Instance.UnlockInput();
     }
 
     private void PopulateRecipeButtons()
@@ -189,6 +189,7 @@ public class CraftingUI : MonoBehaviour
             if (selectedRecipe.resultItem != null)
             {
                 inventory.AddItem(selectedRecipe.resultItem, selectedRecipe.resultQuantity);
+                ToolRingManager.Instance.AddCraftedToolToRing(selectedRecipe.resultItem, selectedRecipe.icon);
             }
 
             // Update UI

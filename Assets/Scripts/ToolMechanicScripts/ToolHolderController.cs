@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolHolderController : MonoBehaviour
 {
     public SpriteRenderer toolRenderer;
     public SpriteRenderer playerRenderer;
     public PlayerAnimation playerAnim; // reference player animation script
+    public Image selectionHighlight;
 
     // Offsets
     public Vector2 upOffset;
@@ -16,7 +18,17 @@ public class ToolHolderController : MonoBehaviour
 
     void Update()
     {
-        UpdateToolPosition();
+        // Only update tool position if we have tools and one is equipped
+        if (ToolRingManager.Instance != null)
+        {
+            UpdateToolPosition();
+        }
+        else
+        {
+            // Hide tool if no tools available
+            if (toolRenderer != null)
+                toolRenderer.enabled = false;
+        }
     }
 
     void UpdateToolPosition()

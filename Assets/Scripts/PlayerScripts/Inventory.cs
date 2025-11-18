@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Dictionary<BaseItem, int> items = new Dictionary<BaseItem, int>();
-    // Debug method to display inventory contents when pressing 'I'
+
+    // Event to notify when tools are added
+    public static event Action<BaseItem> OnToolCrafted;
+    public static event Action<BaseItem, Sprite> OnToolAddedToRing;
+
     void Update()
     {
+        // For testing: Press I to print inventory contents
+        // TODO: Turn this into a proper UI display
         if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("Inventory Contents:");
@@ -30,7 +37,17 @@ public class Inventory : MonoBehaviour
         }
 
         Debug.Log($"Added {quantity} {item.itemName} to inventory");
+
+        // If it's a tool, notify systems
+        if (item.isTool == true) 
+        {
+            // Enable tool ring usage
+            // ToolRingManager.Instance.toolRingPanel.SetActive(true);
+            OnToolCrafted?.Invoke(item);
+            OnToolAddedToRing?.Invoke(item, item.icon);
+        }
     }
+
 
     public bool HasItems(BaseItem item, int quantity)
     {
@@ -70,7 +87,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // Helper method to get item count for UI
     public int GetItemCount(BaseItem item)
     {
         return items.ContainsKey(item) ? items[item] : 0;

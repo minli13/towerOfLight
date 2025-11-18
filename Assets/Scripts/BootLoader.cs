@@ -17,6 +17,9 @@ public class BootLoader : MonoBehaviour
     {
         // Load the initial gameplay scene
         SceneManager.LoadScene(sceneToLoad);
+
+        // Disable tool ring at start
+        ToolRingManager.Instance.toolRingPanel.SetActive(false);
     }
 }
 
