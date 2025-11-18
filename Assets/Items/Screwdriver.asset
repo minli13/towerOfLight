@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Screwdriver
   m_EditorClassIdentifier: 
   itemName: Screwdriver
-  icon: {fileID: 21300000, guid: da4c001f0a1455f438aab9a837dd6d8d, type: 3}
+  icon: {fileID: 21300000, guid: e8fd277aec62cd14f811ed2642c8906d, type: 3}
+  isTool: 1
   durability: 0
   power: 0

@@ -17,6 +17,15 @@ public class Shopkeeper : MonoBehaviour
 
     private bool hasMetPlayer = false;
     private bool isPlayerInRange = false;
+
+    private Inventory inventory;
+
+    void Start()
+    {
+        inventory = FindObjectOfType<Inventory>();
+
+    }
+
     void Update()
     {
         if (!isPlayerInRange) return;
@@ -25,7 +34,6 @@ public class Shopkeeper : MonoBehaviour
         // Interact button
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Interacted with shopkeeper.");
             Interact();
         }
     }
@@ -51,12 +59,12 @@ public class Shopkeeper : MonoBehaviour
     {
         yield return DialogueUI.Instance.RunDialogue(firstTimeDialogue); // Wait for dialogue to finish
 
-        Debug.Log("First time dialogue finished.");
+        // Debug.Log("First time dialogue finished.");
 
         // Give starter items
-        Inventory.Instance.Add(metalScrap, metalAmount);
-        Inventory.Instance.Add(copperWire, copperAmount);
-        Inventory.Instance.Add(apple, appleAmount);
+        inventory.AddItem(metalScrap, metalAmount);
+        inventory.AddItem(copperWire, copperAmount);
+        inventory.AddItem(apple, appleAmount);
 
         yield return DialogueUI.Instance.ShowLine($"Received {appleAmount} Apples!");
         yield return DialogueUI.Instance.ShowLine($"Received {copperAmount} Copper Wires!");
@@ -73,7 +81,6 @@ public class Shopkeeper : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
             isPlayerInRange = true;
-            Debug.Log("Player in range of shopkeeper.");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -56,7 +56,7 @@ public class DialogueUI : MonoBehaviour
 
             waitingForInput = true;
 
-            Debug.Log("SEQ LINE: " + line);
+            // Debug.Log("DIALOGUE LINE: " + line);
 
             // Wait until player hits E or Space
             while (waitingForInput)
@@ -105,7 +105,7 @@ public class DialogueUI : MonoBehaviour
  
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Input received, continuing dialogue.");
+            // Debug.Log("Input received, continuing dialogue.");
 
             // If still typing then skip
             if (!skipTyping && dialogueText.text != currentFullLine)

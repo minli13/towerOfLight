@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
             playerMovement.enabled = false;
         }
     
-        Debug.Log("Input controller script has been disabled.");
     }
 
     // Call this method to unlock input by enabling the script.
@@ -38,6 +37,5 @@ public class GameManager : MonoBehaviour
             playerMovement.enabled = true;
         }
 
-        Debug.Log("Input controller script has been enabled.");
     }
 }

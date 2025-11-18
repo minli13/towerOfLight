@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.LockInput();
-            Debug.Log("PlayerMovement Start: Locked Input");
+            // Debug.Log("PlayerMovement Start: Locked Input");
         }
 
     }

@@ -59,12 +59,8 @@ public class NPCPatrol : MonoBehaviour
             // If last waypoint, STOP
             if (currentWP == waypoints.Length - 2)
             {
-                Debug.Log(waypoints.Length);
-                Debug.Log($"{name}: Reached final waypoint at waypoint {currentWP}. Stopping patrol.");
                 StopMovement(); // stops anim + movement
 
-                // Optional: trigger dialogue here
-                // TownGameManager.Instance.TriggerCutsceneDialogue();
 
                 return;
             }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70e6d6e18db7f824d9889bdaddd40c56, type: 3}
-  m_Name: Pliers
+  m_Name: Crimping
   m_EditorClassIdentifier: 
-  itemName: Pliers
-  icon: {fileID: 21300000, guid: 7aed1c7d9bcfa844297764a3227f45af, type: 3}
+  itemName: Crimping
+  icon: {fileID: 21300000, guid: 736a55e4227c2e746940109523ce4184, type: 3}
+  isTool: 1
   durability: 0
   power: 0
