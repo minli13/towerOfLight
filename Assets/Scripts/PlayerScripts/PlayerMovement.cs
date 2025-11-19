@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     // private Animator anim;
     private float moveH, moveV;
     [SerializeField] private float moveSpeed = 1.0f;
-   
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void ForceStopMovement()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
     private void FixedUpdate()
     {
         moveH = Input.GetAxis("Horizontal") * moveSpeed;
@@ -44,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
         FindObjectOfType<PlayerAnimation>().SetDirection(direction);
     }
+
+    
 
 
 }

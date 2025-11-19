@@ -5,7 +5,6 @@ using TMPro;
 
 public class CellController : MonoBehaviour
 {
-    public TextMeshProUGUI counterText; // Reference to UI Text element
     public static CellController instance;
 
     void Awake()
@@ -16,16 +15,12 @@ public class CellController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Update counter display on start if a counterText is assigned
-        if (counterText != null)
-        {
-            counterText.text = "Cells: " + PlayerInventory.instance.collectedCount.ToString();
-        }
+
     }
 
     private void Update()
     {
-        UpdateCounterDisplay(); // Continuously update the UI
+        PlayerInventory.Instance.UpdateCounterDisplay(); // Continuously update the UI
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,17 +28,10 @@ public class CellController : MonoBehaviour
         // Check if the colliding object is the player
         if (other.CompareTag("Player")) // Ensure your player GameObject has the "Player" tag
         {
-            
-            PlayerInventory.instance.AddCollectible();
-            UpdateCounterDisplay(); // Update the UI
+            PlayerInventory.Instance.AddCollectible();
+            PlayerInventory.Instance.UpdateCounterDisplay(); // Update the UI
             Destroy(gameObject); // Make the sprite disappear
         }
     }
-    public void UpdateCounterDisplay()
-    {
-        if (counterText != null)
-        {
-            counterText.text = "Cells: " + PlayerInventory.instance.collectedCount.ToString();
-        }
-    }
+
 }

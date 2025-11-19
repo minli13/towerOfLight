@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   itemName: Apple
-  icon: {fileID: 0}
-  healAmount: 1
+  icon: {fileID: 21300000, guid: a78a92612d53f3e4cb8dbf9d0a501aa1, type: 3}
+  isTool: 0
+  isConsumable: 1
+  description: Apple
+  restoreHealth: 1
+  isStackable: 1
+  maxStackSize: 99

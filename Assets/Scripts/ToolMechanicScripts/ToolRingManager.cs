@@ -15,7 +15,7 @@ public class ToolRingManager : MonoBehaviour
     [Header("Current Tool Info")]
     public string currentToolName;
     private int selectedToolIndex = 0;
-    private bool isOpen = false;
+    public bool isOpen = false;
 
     [Header("Tool Ring State")]
     public bool hasAnyTools = false; // flag to mark true when player gets first tool
@@ -48,14 +48,22 @@ public class ToolRingManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(openKey))
+        // Only allow if game state permits
+        if (!GameManager.Instance.CanUseToolRing() && Input.GetKeyDown(KeyCode.Tab))
         {
-            OpenRing();
+            return;
         }
-
-        if (Input.GetKeyUp(openKey))
+        if (GameManager.Instance.CanUseToolRing())
         {
-            CloseRing();
+            if (Input.GetKeyDown(openKey))
+            {
+                OpenRing();
+            }
+
+            if (Input.GetKeyUp(openKey))
+            {
+                CloseRing();
+            }
         }
 
         // Navigate tools while ring is open
@@ -178,8 +186,11 @@ public class ToolRingManager : MonoBehaviour
                 newToolIcon.name = tool.itemName;
                 // newToolIcon.gameObject.SetActive(true);
 
-                // Add to our tracking list
-                toolIcons.Add(newToolIcon);
+                // Add to our tracking list if not already present
+                if (!toolIcons.Contains(newToolIcon))
+                {
+                    toolIcons.Add(newToolIcon);
+                }
             }
             else
             {

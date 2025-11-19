@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Hey there, neighbor!
-  - Welcome to our town!
-  - Come with me, the mayor needs your help.
+  - Welcome to Eternity!
+  - 'Come with me, the town needs your help. '
+  - You need your tools. Go and talk to the shopkeeper over there first!

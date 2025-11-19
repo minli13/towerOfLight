@@ -69,6 +69,11 @@ public class CraftingStation : MonoBehaviour
 
     private void OpenCraftingUI()
     {
+        // Check if crafting is allowed
+        if (!GameManager.Instance.CanUseCrafting())
+        {
+            return;
+        }
         if (CraftingUI.Instance != null)
         {
             CraftingUI.Instance.ShowCraftingStation(this);

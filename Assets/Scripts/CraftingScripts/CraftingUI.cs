@@ -190,6 +190,7 @@ public class CraftingUI : MonoBehaviour
             {
                 inventory.AddItem(selectedRecipe.resultItem, selectedRecipe.resultQuantity);
                 ToolRingManager.Instance.AddCraftedToolToRing(selectedRecipe.resultItem, selectedRecipe.icon);
+                GameManager.Instance.CompleteFirstCraft(); // Notify game manager of first craft
             }
 
             // Update UI

@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewFood", menuName = "Items/Food")]
 public class Food : BaseItem
 {
-    public int healAmount;
+    public bool isStackable;
+    public int maxStackSize;
 }

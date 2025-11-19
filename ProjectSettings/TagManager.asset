@@ -7,6 +7,7 @@ TagManager:
   - Collectible
   - WireStart
   - WireEnd
+  - InteractionPanel
   layers:
   - Default
   - TransparentFX

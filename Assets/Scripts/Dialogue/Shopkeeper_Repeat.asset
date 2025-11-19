@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shopkeeper_Repeat
   m_EditorClassIdentifier: 
   lines:
-  - Hi!
-  - Wanna buy something?
+  - Back again so soon? Looking to buy something?
+  - Come back later when I have more in stock!
