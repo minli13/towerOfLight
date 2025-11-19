@@ -85,7 +85,6 @@ public class CraftingStation : MonoBehaviour
         }
     }
 
-    // Optional: Visualize interaction radius in editor (2D)
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
