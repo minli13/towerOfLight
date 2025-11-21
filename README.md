@@ -12,3 +12,6 @@ HOW TO RUN:
 2. Run "TowerOfLight.exe" (Windows)
    OR "TowerOfLight.app" (Mac)
    OR "TowerOfLight.x86_64" (Linux)
+
+DEMO VIDEO:
+[![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/master/game_title.png)](https://raw.githubusercontent.com/minli13/towerOfLight/master/towerOfLight_demo.mp4)
