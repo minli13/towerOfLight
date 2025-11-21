@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CraftingStation : MonoBehaviour
@@ -11,7 +12,8 @@ public class CraftingStation : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
 
     [Header("UI Prompt")]
-    public GameObject interactionPrompt;
+    public TMP_Text interactionPrompt;
+    public GameObject interactionPanel;
 
     private bool playerInRange = false;
     private GameObject player;
@@ -37,11 +39,17 @@ public class CraftingStation : MonoBehaviour
         {
             playerInRange = true;
             player = other.gameObject;
+            interactionPanel.SetActive(true);
 
-            // Show UI prompt
-            if (interactionPrompt != null)
+            if (GameManager.Instance.CanUseCrafting() == false)
             {
-                interactionPrompt.SetActive(true);
+                interactionPrompt.text = "Crafting Unavailable!";
+                return;
+            }
+            // Show UI prompt
+            else if (interactionPrompt != null)
+            {
+                interactionPrompt.text = "Press E to craft";
             }
             else
             {
@@ -60,9 +68,11 @@ public class CraftingStation : MonoBehaviour
             // Debug.Log("Player left crafting station range");
 
             // Hide UI prompt
+            interactionPanel.SetActive(false);
+
             if (interactionPrompt != null)
             {
-                interactionPrompt.SetActive(false);
+                interactionPrompt.text = "";
             }
         }
     }

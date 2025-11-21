@@ -1238,6 +1238,7 @@ MonoBehaviour:
   craftingPanel: {fileID: 1361661037}
   recipeButtonParent: {fileID: 2047743986}
   recipeButtonPrefab: {fileID: 6153608066902089606, guid: 706fd665f727543449af3d1673ed10c1, type: 3}
+  interactionPrompt: {fileID: 764348863}
   selectedRecipeIcon: {fileID: 1439646363}
   selectedRecipeName: {fileID: 402799093}
   ingredientsParent: {fileID: 1245767699}
@@ -1772,7 +1773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to Craft
+  m_text: Press E to Interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2259,6 +2260,9 @@ MonoBehaviour:
   metalScrap: {fileID: 11400000, guid: 07d44206e6bc4e24ea18fcb40dd816ba, type: 2}
   copperWire: {fileID: 11400000, guid: 85a781fede7cd2c46bb21fdea44f2a26, type: 2}
   apple: {fileID: 11400000, guid: c7c1d68b6ba2d6a4b81d580fab757613, type: 2}
+  interactionPrompt: {fileID: 764348863}
+  interactionPanel: {fileID: 1148645526}
+  dialoguePanel: {fileID: 104563641}
   metalAmount: 3
   copperAmount: 2
   appleAmount: 5
@@ -2700,7 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13113,7 +13117,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6a04ea7ef8114544b106f0b5b03085d, type: 2}
   interactionRadius: 2
   interactKey: 101
-  interactionPrompt: {fileID: 764348863}
+  interactionPrompt: {fileID: 764348865}
+  interactionPanel: {fileID: 1148645526}
 --- !u!1 &1655582697
 GameObject:
   m_ObjectHideFlags: 0
@@ -13259,7 +13264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: TowerLevel1
   spawnPosition: {x: 0, y: 0}
-  InteractionPanel: {fileID: 1148645526}
+  interactionPrompt: {fileID: 764348865}
+  interactionPanel: {fileID: 1148645526}
 --- !u!1 &1840902874
 GameObject:
   m_ObjectHideFlags: 0

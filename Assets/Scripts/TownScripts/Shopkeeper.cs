@@ -19,6 +19,11 @@ public class Shopkeeper : MonoBehaviour
     public BaseItem copperWire;
     public BaseItem apple;
 
+    [Header("UI Prompt")]
+    public GameObject interactionPrompt;
+    public GameObject interactionPanel;
+    public GameObject dialoguePanel;
+
     public int metalAmount = 3;
     public int copperAmount = 2;
     public int appleAmount = 5;
@@ -91,6 +96,7 @@ public class Shopkeeper : MonoBehaviour
         
         else if (!Inventory.Instance.inventoryPanel.activeInHierarchy)
         {
+            Debug.Log("Tutorial not complete yet, showing locked message.");
             // Tutorial not complete yet, show a message and unlock player
             DialogueUI.Instance.IsDialogueRunning = true;
             StartCoroutine(ShowTutorialLockedMessage());
@@ -100,19 +106,22 @@ public class Shopkeeper : MonoBehaviour
     IEnumerator ShowTutorialLockedMessage()
     {   
         if (isTutorialActive)
-        {
+        {   
+            dialoguePanel.SetActive(true);
             yield return DialogueUI.Instance.ShowLine($"Hold on! Let's finish the tutorial first. Press {waitingFor}!");
             yield return DialogueUI.Instance.WaitForInputCoroutine();
+            dialoguePanel.SetActive(false);
         }
         else
         {
+            dialoguePanel.SetActive(true);
             yield return DialogueUI.Instance.ShowLine("Come back after you've tried crafting your first tool!");
             yield return DialogueUI.Instance.WaitForInputCoroutine();
+            dialoguePanel.SetActive(false);
             // Unlock the player since we're not running a full dialogue
             UnlockPlayer();
             GameManager.Instance.UnlockInput();
         }
-
         // Unlock the player since we're not running a full dialogue
         // UnlockPlayer();
         // GameManager.Instance.UnlockInput();
@@ -149,6 +158,7 @@ public class Shopkeeper : MonoBehaviour
         yield return DialogueUI.Instance.ShowLine($"Received {appleAmount} Apples!");
         yield return DialogueUI.Instance.ShowLine($"Received {copperAmount} Copper Wires!");
         yield return DialogueUI.Instance.ShowLine($"Received {metalAmount} Metal Scraps!");
+
         
         // Enable crafting after first dialogue
         GameManager.Instance.SetCraftingAccess(true);
@@ -165,7 +175,7 @@ public class Shopkeeper : MonoBehaviour
         // Tool Ring Tutorial
         GameManager.Instance.SetToolRingAccess(true);
         waitingFor = "TAB"; // tool ring
-        yield return DialogueUI.Instance.ShowLine("Press TAB to open your tool ring...");
+        yield return DialogueUI.Instance.ShowLine("Press TAB to open your tool ring...");       
         yield return WaitForUIWindow(() => ToolRingManager.Instance.isOpen, "tool ring");
         yield return DialogueUI.Instance.ShowLine("Great! Use TAB to switch between tools.");
 
@@ -246,12 +256,27 @@ public class Shopkeeper : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            interactionPanel.SetActive(true);
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.SetActive(true);
+            }
             isPlayerInRange = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            interactionPanel.SetActive(false);
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.SetActive(false);
+            }
             isPlayerInRange = false;
+        }
     }
 }

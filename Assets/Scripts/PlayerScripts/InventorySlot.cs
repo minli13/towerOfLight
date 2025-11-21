@@ -51,6 +51,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
         if (quantityText != null)
         {
+            // Show quantity only if more than 1
             quantityText.text = quantity > 1 ? quantity.ToString() : "";
             quantityText.gameObject.SetActive(quantity > 1);
         }

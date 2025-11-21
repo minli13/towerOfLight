@@ -12,6 +12,7 @@ public class CraftingUI : MonoBehaviour
     public GameObject craftingPanel;
     public Transform recipeButtonParent; 
     public GameObject recipeButtonPrefab; 
+    public GameObject interactionPrompt;
 
     [Header("Selected Recipe Panel")]
     public Image selectedRecipeIcon;
@@ -84,6 +85,7 @@ public class CraftingUI : MonoBehaviour
     {
         currentStation = station;
         craftingPanel.SetActive(true);
+        interactionPrompt.SetActive(false);
         PopulateRecipeButtons();
         ClearSelectedRecipe();
 

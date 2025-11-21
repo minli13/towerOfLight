@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
+    [Header("Scene Transition Settings")]
     [SerializeField] private string sceneToLoad = "TowerLevel1"; // target scene
     [SerializeField] private Vector2 spawnPosition; // optional spawn point in new scene
-    public GameObject InteractionPanel;
+
+    [Header("UI Prompt")]
+    public TMP_Text interactionPrompt;
+    public GameObject interactionPanel;
 
     private bool playerInRange = false;
 
@@ -39,14 +44,15 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
+            interactionPanel.SetActive(true);
             if (GameManager.Instance.level1Opened == false)
             {
-                InteractionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Level Locked!";
+                interactionPrompt.text = "Level Locked!";
                 return;
             }
             else
             {
-                InteractionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Press E to enter!";
+                interactionPrompt.text = "Press E to enter!";
             }
         }
     }
@@ -56,6 +62,8 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            interactionPrompt.text = "";
+            interactionPanel.SetActive(false);
         }
     }
 }

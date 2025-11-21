@@ -67,6 +67,18 @@ public class Inventory : MonoBehaviour
         // Press I to toggle inventory if allowed
         if (GameManager.Instance.CanUseInventory() && Input.GetKeyDown(KeyCode.I))
         {
+            if (interactionPanel == null)
+            {
+
+                interactionPanel = GameObject.FindWithTag("InteractionPanel");
+            }
+            interactionPanel.SetActive(false); // Hide interaction panel when inventory is opened
+
+            if (statisticsPanel == null)
+            {
+                statisticsPanel = GameObject.Find("StatsPanel");
+            }
+            statisticsPanel.SetActive(false); // Hide statistics panel when inventory is opened
             ToggleInventory();
         }
 
@@ -120,6 +132,13 @@ public class Inventory : MonoBehaviour
             // Enable tool ring usage
             OnToolCrafted?.Invoke(item);
             OnToolAddedToRing?.Invoke(item, item.icon);
+        }
+
+        // Check for inventory overflow
+        if (items.Count > maxSlots)
+        {
+            Debug.LogWarning("Inventory is full!");
+            return;
         }
     }
 
