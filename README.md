@@ -15,4 +15,4 @@ HOW TO RUN:
    OR "TowerOfLight.x86_64" (Linux)
 
 DEMO VIDEO:
-[![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/master/game_title.png)](https://raw.githubusercontent.com/minli13/towerOfLight/master/towerOfLight_demo.mp4)
+[![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/a18f6428ac6194196ff37c6d509d047b284178ad/game_title.png)](https://raw.githubusercontent.com/minli13/towerOfLight/master/towerOfLight_demo.mp4)
