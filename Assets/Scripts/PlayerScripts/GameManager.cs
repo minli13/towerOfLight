@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("Level Progression")]
     public bool level1Opened = false; // Temporary set true now in Shopkeeper after tutorial around line 181
     public bool level2Opened = false;
+    public bool endingUnlocked = false; // Temporary set true now after level 1 completion (terminal activated) in conduit puzzle around line 34
 
     [Header("Tutorial Settings")]
     public bool showTutorialPopups = true;
@@ -32,10 +33,9 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // Ensure this object persists across scene loads
+        DontDestroyOnLoad(this.gameObject);
+
     }
 
     void Start()

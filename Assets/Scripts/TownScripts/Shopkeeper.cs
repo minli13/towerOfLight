@@ -107,6 +107,7 @@ public class Shopkeeper : MonoBehaviour
     {   
         if (isTutorialActive)
         {   
+            interactionPrompt.SetActive(false);
             dialoguePanel.SetActive(true);
             yield return DialogueUI.Instance.ShowLine($"Hold on! Let's finish the tutorial first. Press {waitingFor}!");
             yield return DialogueUI.Instance.WaitForInputCoroutine();
@@ -114,6 +115,7 @@ public class Shopkeeper : MonoBehaviour
         }
         else
         {
+            interactionPrompt.SetActive(false);
             dialoguePanel.SetActive(true);
             yield return DialogueUI.Instance.ShowLine("Come back after you've tried crafting your first tool!");
             yield return DialogueUI.Instance.WaitForInputCoroutine();
@@ -147,6 +149,7 @@ public class Shopkeeper : MonoBehaviour
 
     IEnumerator RunFirstTimeDialogue()
     {
+        interactionPanel.SetActive(false);
         yield return DialogueUI.Instance.RunDialogue(firstTimeDialogue);
 
         // Give starter items
@@ -165,7 +168,6 @@ public class Shopkeeper : MonoBehaviour
         yield return DialogueUI.Instance.ShowLine("There you go! Try crafting over at the table!");
         
         yield return DialogueUI.Instance.WaitForInputCoroutine();
-
         UnlockPlayer();
     }
     IEnumerator RunTutorialDialogue()
@@ -197,6 +199,7 @@ public class Shopkeeper : MonoBehaviour
         isTutorialActive = false;
         waitingFor = "";
         GameManager.Instance.level1Opened = true; // Unlock level 1
+        Debug.Log("Tutorial complete! Level 1 unlocked.");
         UnlockPlayer();
     }
 
@@ -272,10 +275,7 @@ public class Shopkeeper : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             interactionPanel.SetActive(false);
-            if (interactionPrompt != null)
-            {
-                interactionPrompt.SetActive(false);
-            }
+           
             isPlayerInRange = false;
         }
     }

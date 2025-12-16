@@ -29,6 +29,11 @@ public class ConduitPuzzle : MonoBehaviour
         {
             CheckForEquippedToolToStart();
         }
+        if (isPowered)
+        {
+            GameManager.Instance.endingUnlocked = true;
+            Debug.Log("Ending has been unlocked!");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +71,13 @@ public class ConduitPuzzle : MonoBehaviour
         {
             Debug.Log("You need to equip the Screwdriver to interact with the conduit.");
             interactionMessage.text = "Equip the Screwdriver to interact with the conduit.";
+            // interact message go away after 3 seconds
+            StartCoroutine(ClearInteractionMessageAfterDelay(3f));
+            IEnumerator ClearInteractionMessageAfterDelay(float delay)
+            {
+                yield return new WaitForSeconds(delay);
+                interactionMessage.text = "";
+            }
             // current tool equipped
             Debug.Log($"Current tool: {ToolRingManager.Instance.currentToolName}");
 
@@ -80,6 +92,7 @@ public class ConduitPuzzle : MonoBehaviour
         PlayerInventory.Instance.AddCollectible();
         PlayerInventory.Instance.AddCollectible();
         PlayerInventory.Instance.AddCollectible();
+        PlayerInventory.Instance.UpdateCounterDisplay();
         // Message to player
         interactionMessage.text = "Conduit powered! Added 3 cells to inventory.";
         Debug.Log("Conduit powered! Added 3 cells to inventory.");

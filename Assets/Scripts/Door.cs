@@ -19,8 +19,8 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        // Check if level is unlocked
-        if (GameManager.Instance.level1Opened == false)
+        // If not unlocked, do nothing
+        if (GameManager.Instance.level1Opened == false && GameManager.Instance.endingUnlocked == false)
         {
             return;
         }
@@ -48,7 +48,6 @@ public class Door : MonoBehaviour
             if (GameManager.Instance.level1Opened == false)
             {
                 interactionPrompt.text = "Level Locked!";
-                return;
             }
             else
             {
@@ -62,6 +61,7 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+
             interactionPrompt.text = "";
             interactionPanel.SetActive(false);
         }

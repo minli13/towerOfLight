@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: metalScrap
   m_EditorClassIdentifier: 
   itemName: Metal Scrap
-  icon: {fileID: 21300000, guid: db8d5c1cf9ba95f489e18b1367326c7b, type: 3}
+  icon: {fileID: 21300000, guid: 0577dbdc7bb9ddc44ad7308b23578405, type: 3}
   isTool: 0
   isConsumable: 1
   description: 

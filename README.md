@@ -1,4 +1,5 @@
-Tower Of Light
+# Tower Of Light
+A 2.5D isometric puzzle game
 
 CONTROLS:
 - WASD: Move character

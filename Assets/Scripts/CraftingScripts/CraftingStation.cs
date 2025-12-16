@@ -40,6 +40,7 @@ public class CraftingStation : MonoBehaviour
             playerInRange = true;
             player = other.gameObject;
             interactionPanel.SetActive(true);
+            
 
             if (GameManager.Instance.CanUseCrafting() == false)
             {

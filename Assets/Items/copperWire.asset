@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: copperWire
   m_EditorClassIdentifier: 
   itemName: Copper Wire
-  icon: {fileID: 21300000, guid: db8d5c1cf9ba95f489e18b1367326c7b, type: 3}
+  icon: {fileID: 21300000, guid: 9d7dd55b3e12bc7478d93f868164c4b5, type: 3}
   isTool: 0
   isConsumable: 1
   description: 

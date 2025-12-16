@@ -8,7 +8,6 @@ public class StartMenu : MonoBehaviour
     [SerializeField] private string firstScene = "Boot"; // Boot scene with player and systems
 
 
-
     public void StartGame()
     {
         SceneManager.LoadScene(firstScene);
@@ -17,6 +16,11 @@ public class StartMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void SettingsScene()
+    {
+        SceneManager.LoadScene("Settings");
     }
 }
 

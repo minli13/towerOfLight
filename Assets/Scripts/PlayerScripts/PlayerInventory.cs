@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
         // Update counter display on start if a counterText is assigned
         if (counterText != null)
         {
-            counterText.text = "Cells: " + PlayerInventory.Instance.collectedCount.ToString();
+            counterText.text = PlayerInventory.Instance.collectedCount.ToString();
         }
     }
 
@@ -45,7 +45,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (counterText != null)
         {
-            counterText.text = "Cells: " + PlayerInventory.Instance.collectedCount.ToString();
+            counterText.text = PlayerInventory.Instance.collectedCount.ToString();
         }
     }
 }
