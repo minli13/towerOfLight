@@ -25,4 +25,4 @@ For main character sprite:
 - **[Small 8-direction Characters]** by [AxulArt] ([[Link to asset](https://axulart.itch.io/small-8-direction-characters)])  
 
 ## DEMO VIDEO:
-[![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/a18f6428ac6194196ff37c6d509d047b284178ad/game_title.png)](https://raw.githubusercontent.com/minli13/towerOfLight/master/towerOfLight_demo.mp4)
+[![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/a18f6428ac6194196ff37c6d509d047b284178ad/game_title.png)](https://drive.google.com/file/d/1f2NTJFOpmCllQQIMhILGsTUgHE4p3mKY/view?usp=sharing)
