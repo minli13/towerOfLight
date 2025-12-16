@@ -1,5 +1,5 @@
 # Tower Of Light
-A 2.5D isometric puzzle game
+A 2.5D isometric puzzle game where a skilled builder must ascend a dormant energy tower, using his electrician’s toolkit to solve multi-layered puzzles and restore power to his town, uncovering a mysterious past in the process.
 
 ## CONTROLS:
 - WASD: Move character
