@@ -11,8 +11,6 @@ A 2.5D isometric puzzle game where a skilled builder must ascend a dormant energ
 ## SETUP:
 1. Extract the ZIP file here: [Tower Of Light](https://drive.google.com/file/d/1jObhA5jWgl3u4N7BS_JmznVvzV6VfeBb/view?usp=sharing) or download Build.zip
 2. Run "TowerOfLight.exe" (Windows)
-   OR "TowerOfLight.app" (Mac)
-   OR "TowerOfLight.x86_64" (Linux)
 
 ## FEATURES:
 - Tool-based puzzle solving
