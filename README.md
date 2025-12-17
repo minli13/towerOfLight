@@ -21,8 +21,11 @@ A 2.5D isometric puzzle game where a skilled builder must ascend a dormant energ
 
 ## ASSETS / CREDITS:
 The following assets were used in this project:
-For main character sprite:
-- **[Small 8-direction Characters]** by [AxulArt] ([[Link to asset](https://axulart.itch.io/small-8-direction-characters)])  
+- Main character sprite:
+   - **Small 8-direction Characters** by AxulArt ([[Link to asset](https://axulart.itch.io/small-8-direction-characters)])
+- **Various in-game sprites**, including tools, hearts, and UI-related elements  
+   - Created by Alex Ly
+
 
 ## DEMO VIDEO:
 [![Watch the video](https://raw.githubusercontent.com/minli13/towerOfLight/a18f6428ac6194196ff37c6d509d047b284178ad/game_title.png)](https://drive.google.com/file/d/1f2NTJFOpmCllQQIMhILGsTUgHE4p3mKY/view?usp=sharing)
