@@ -8,7 +8,10 @@ A 2.5D isometric puzzle game where a skilled builder must ascend a dormant energ
 - I: Open inventory
 - Mouse: Click on UI elements
 
-## SETUP:
+## PLAY THE GAME HERE:
+https://minli13.itch.io/tower-of-light
+
+## OR SETUP:
 1. Extract the ZIP file here: [Tower Of Light](https://drive.google.com/file/d/1jObhA5jWgl3u4N7BS_JmznVvzV6VfeBb/view?usp=sharing) or download Build.zip
 2. Run "TowerOfLight.exe" (Windows)
 
